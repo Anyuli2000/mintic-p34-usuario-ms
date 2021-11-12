@@ -22,10 +22,10 @@ class UserManager(BaseUserManager):
         return usuario
 
 class User(AbstractBaseUser, PermissionsMixin):
-    id = models.BigIntegerField('Identificacion',primary_key=True, null=False)
+    id = models.BigIntegerField('Identificación',primary_key=True, null=False)
     usu_nombreUsuario = models.CharField('Nombre usuario', max_length=60, null=False, blank=False, unique=True)
     password = models.CharField('Contraseña', max_length=256, null=False)
-    usu_nombre = models.CharField('Nombres', max_length=20, null=False)
+    usu_nombre = models.CharField('Nombre y apellido', max_length=20, null=False)
 
     def save(self, **kwargs):
         some_salt = 'mMUj0DrIK6vgtdIYepkIxN'
